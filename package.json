@@ -1,0 +1,39 @@
+{
+    "name": "@tongleen/tcad-atlas-str",
+    "version": "0.1.0",
+    "description": "本仓库是一个 TypeScript DSL 库，用于为 SILVACO Atlas 生成**器件结构**（structure）脚本。",
+    "keywords": [
+        "TCAD",
+        "code-generate"
+    ],
+    "license": "Apache-2.0",
+    "author": "tongleen",
+    "type": "module",
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs"
+        }
+    },
+    "files": [
+        "./dist"
+    ],
+    "scripts": {
+        "build": "tsup",
+        "dev": "tsup --watch",
+        "typecheck": "tsc --noEmit",
+        "prepublishOnly": "npm run build",
+        "format": "biome format --write ."
+    },
+    "devDependencies": {
+        "@biomejs/biome": "^2.5.14",
+        "@types/node": "^26.6.3",
+        "tsup": "^8.5.1",
+        "tsx": "^4.23.15",
+        "typescript": "^6.0.3"
+    }
+}
